@@ -1,9 +1,21 @@
-.antraste {
-  color: green;
-  text-transform: uppercase;
-}
-
-.darzove {
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 20px;
-  font-style: italic;
+}
+.big {
+  font-size: 40px;
+}
+nav {
+  display: none;
+  gap: 10px;
+}
+nav.visible {
+  display: flex;
+  flex-direction: column;
+}
+.hamburger {
+  font-size: 40px;
+  cursor: pointer;
 }

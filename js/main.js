@@ -1,20 +1,11 @@
-/*
+const logoDOM = document.querySelector('.logo');
+const hamburgerDOM = document.querySelector('.hamburger')
+const navDOM = document.querySelector('nav');
 
 
+console.log(navDOM);
 
-surasti visus ingredientus ir pakeisti i israuta darzove
-*/
-
-
-const h1DOM = document.querySelector('h1');
-h1DOM.innerText = 'Zuikio darzas';
-h1DOM.classList.add('antraste');
-
-const ingredientasDOM = document.querySelectorAll('li');
-
-
-
-for (let i = 0; i < ingredientasDOM.length; i++) {
-    ingredientasDOM[i].innerText = 'Israuta darzove';
-    ingredientasDOM[i].classList.add('darzove');
-}
+hamburgerDOM.addEventListener('click', () => {
+    navDOM.classList.toggle('visible');
+    logoDOM.classList.toggle('big');
+})
