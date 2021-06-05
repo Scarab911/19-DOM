@@ -1,24 +1,29 @@
-const buttonDOM = document.querySelector('button');
-const messageInputDOM = document.querySelector('input');
-const spanDOM = document.querySelector('span');
-const fonoSpalva = document.querySelector('#bg-color');
-const tekstoSpalva = document.querySelector('#text-color');
+const mygtukas = document.querySelector('button');
+const klientas = document.querySelector('#customer');
+const sriuba = document.querySelector('#sriuba');
+const patiekalas = document.querySelector('#patiekalas');
+const desertas = document.querySelector('#desertas');
+const uzsakymas = document.querySelector('.order')
+const gerimas = document.querySelectorAll('input[name="drinks"]')
 
-
-
-messageInputDOM.style.color = 'red';
-
-
-buttonDOM.addEventListener('click', (event) => {
-    //isjungiam delfaultinesa savybes, kad nepersikrautu
+mygtukas.addEventListener('click', (event) => {
     event.preventDefault();
-    //priskiriam elemntui turini
-    spanDOM.innerText = messageInputDOM.value;
-    //priskiriam elemtui spalvas
-    spanDOM.style.color = tekstoSpalva.value;
-    spanDOM.style.backgroundColor = fonoSpalva.value;
-    //isvalom forma
-    buttonDOM.style.backgroundColor = fonoSpalva.value;
-    messageInputDOM.value = '';
 
+    function menuCheked(item) {
+        if (item.checked) {
+            return 'nori'
+        }
+        return 'nenori'
+    }
+    function drinkCheked(item) {
+        for (let i = 0; i < item.length; i++) {
+            let gerimoPavadinimas = ''
+            if (item[i].checked === true) {
+                return gerimoPavadinimas = `${item[i].value}`
+
+            }
+
+        }
+    }
+    uzsakymas.innerText = `Uzsakovas vardu ${klientas.value}, ${menuCheked(sriuba)} sriubos, ${menuCheked(patiekalas)} pagrindinio patiekalo, ${menuCheked(desertas)} deserto ir ${drinkCheked(gerimas)} yra pasirinktas gerimas.`;
 })
