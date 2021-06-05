@@ -1,8 +1,8 @@
 const buttonDOM = document.querySelector('button');
 const inputDOM = document.querySelector('input');
 const spanDOM = document.querySelector('span');
-const fonospalva = document.querySelector('#bg-color');
-const textcolor = document.querySelector('#text-color');
+const fonoSpalva = document.querySelector('#bg-color');
+const tekstoSpalva = document.querySelector('#text-color');
 
 
 
@@ -14,8 +14,8 @@ buttonDOM.addEventListener('click', (event) => {
     //priskiriam elemntui turini
     spanDOM.innerText = inputDOM.value;
     //priskiriam elemtui spalvas
-    spanDOM.style.color = `${textcolor.value}`;
-    spanDOM.style.backgroundColor = `${fonospalva.value}`;
+    spanDOM.style.color = `${tekstoSpalva.value}`;
+    spanDOM.style.backgroundColor = `${fonoSpalva.value}`;
     //isvalom forma
     inputDOM.value = '';
 
