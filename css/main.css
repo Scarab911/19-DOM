@@ -19,6 +19,7 @@ form {
 }
 input,
 button {
+  padding: 0 20px;
   font-size: 30px;
   line-height: 40px;
 }
@@ -27,7 +28,8 @@ span {
   border: 1px dotted red;
 }
 
-.color-palete {
+input[type='color'] {
+  padding: 0;
   width: 100px;
   height: 50px;
 }
