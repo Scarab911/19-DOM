@@ -1,27 +1,39 @@
-const mygtukas = document.querySelector('button');
-const klientas = document.querySelector('#customer');
-const sriuba = document.querySelector('#sriuba');
-const patiekalas = document.querySelector('#patiekalas');
-const desertas = document.querySelector('#desertas');
-const uzsakymas = document.querySelector('.order')
-const gerimas = document.querySelectorAll('input[name="drinks"]')
+//rezultatu isvedimui
+const sveciuTaskuSuma = document.querySelector('[data-komanda=sveciu]');
+const namuTaskuSuma = document.querySelector('[data-komanda=namu]');
+//susirandam visa aikste
+const aikstele = document.querySelector('.aikstele');
+//susirandama aiksteles ir ieskome visoje aiksteje 
+const namuAikstele = aikstele.querySelector('[data-komanda=namu]');
+const sveciuAikstele = aikstele.querySelector('[data-komanda=sveciu]');
+//susirandam mygtukus atitinkai kiekvienai aikstelej
+const namuTaskaiButton = namuAikstele.querySelectorAll('button');
+const sveciuTaskaiButton = sveciuAikstele.querySelectorAll('button');
 
-mygtukas.addEventListener('click', (e) => { //e=event, trumpiausias naudojamas parametras 
-    e.preventDefault();
-    let kreipinys = klientas.value === '' ? 'nepateikes vardo' : 'vardu' + klientas.value;
+//isspausdinam paspaudus atitinkama mygtuka 
+let namuRezultatas = 0;
+let sveciuRezultatas = 0;
 
-    function menuCheked(item) {
-        return item.checked ? 'nori' : 'nenori';
-    }
-    function drinkCheked(item) {
-        for (let i = 0; i < item.length; i++) {
-            let gerimoPavadinimas = ''
-            if (item[i].checked === true) {
-                return gerimoPavadinimas = `${item[i].value}`
-            }
-        }
-    }
-    let gerimai = gerimas.value === undefined ? 'nenori gerimo' : (drinkCheked(gerimas)) + 'yra pasirinktas gerimas.'
+for (let i = 0; i < 3; i++) {
+    namuTaskaiButton[i].addEventListener('click', () => {
+        namuRezultatas += i + 1;
+        namuTaskuSuma.innerText = namuRezultatas;
+    });
+    sveciuTaskaiButton[i].addEventListener('click', () => {
+        sveciuRezultatas += i + 1;
+        sveciuTaskuSuma.innerText = sveciuRezultatas;
+    });
+}
 
-    uzsakymas.innerText = `Uzsakovas ${kreipinys}, ${menuCheked(sriuba)} sriubos, ${menuCheked(patiekalas)} pagrindinio patiekalo, ${menuCheked(desertas)} deserto ir ${gerimai}`;
-})
+// let rez = 0
+
+// namuTaskaiButton[0].addEventListener('click', () => {
+//     sveciuTaskuSuma.innerText = namuTaskaiButton[0] + 1;
+// })
+// namuTaskaiButton[1].addEventListener('click', () => {
+//     sveciuTaskuSuma.innerText = namuTaskaiButton[1] + 1;
+// })
+
+// namuTaskaiButton[2].addEventListener('click', () => {
+//     sveciuTaskuSuma.innerText = namuTaskaiButton[2] + 1;
+// })
