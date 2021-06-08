@@ -8,6 +8,7 @@ const gerimas = document.querySelectorAll('input[name="drinks"]')
 
 mygtukas.addEventListener('click', (e) => { //e=event, trumpiausias naudojamas parametras 
     e.preventDefault();
+    let kreipinys = klientas.value === '' ? 'nepateikes vardo' : 'vardu' + klientas.value;
 
     function menuCheked(item) {
         return item.checked ? 'nori' : 'nenori';
@@ -20,5 +21,7 @@ mygtukas.addEventListener('click', (e) => { //e=event, trumpiausias naudojamas p
             }
         }
     }
-    uzsakymas.innerText = `Uzsakovas vardu ${klientas.value}, ${menuCheked(sriuba)} sriubos, ${menuCheked(patiekalas)} pagrindinio patiekalo, ${menuCheked(desertas)} deserto ir ${drinkCheked(gerimas)} yra pasirinktas gerimas.`;
+    let gerimai = gerimas.value === undefined ? 'nenori gerimo' : (drinkCheked(gerimas)) + 'yra pasirinktas gerimas.'
+
+    uzsakymas.innerText = `Uzsakovas ${kreipinys}, ${menuCheked(sriuba)} sriubos, ${menuCheked(patiekalas)} pagrindinio patiekalo, ${menuCheked(desertas)} deserto ir ${gerimai}`;
 })
