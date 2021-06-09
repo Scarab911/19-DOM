@@ -10,7 +10,6 @@ function generuotiSocials(selector, array) {
 
     for (let element of array) {
         HTML += `<i class="fa fa-${element}"></i>`
-        console.log(HTML);
     }
     selectorDOM.innerHTML = HTML;
 }
