@@ -1,36 +1,39 @@
-function generuotiSocials(selector, array) {
-
-    if (!Array.isArray(array) ||
-        array.length === 0) {
-        console.error('ERROR: sarasas turi buti ne tuscias!');
-        return false;
-    }
+function generateNavLinks(selector, listOfLinks) {
 
     const selectorDOM = document.querySelector(selector);
-    if (!selectorDOM) {
-        console.error('ERROR: nepavyko rasti selectoriaus');
-        return false;
-    }
-
-    if (typeof selector !== 'string' ||
-        selector === '') {
-        console.error('ERROR: selectorius negali buti tuscias string!');
-        return false;
-    }
+    const logo = selectorDOM.querySelector('.logo')
+    // console.log(logo);
+    // console.log(listOfLinks[0].title);
 
     let HTML = '';
 
-    for (let element of array) {
-        HTML += `<i class="fa fa-${element}"></i>`
-    }
-    if (HTML === '') {
-        console.error('ERROR: kodo dalis negali buti tuscia ir turi buti string');
-        return false
-    }
+    for (let i in listOfLinks) {
+        HTML += `<a href="${listOfLinks[i].href}">${listOfLinks[i].title}</a>`
 
-    selectorDOM.innerHTML = HTML;
+        console.log(HTML)
+    }
+    logo.insertAdjacentHTML("afterend", `<nav>${HTML}</nav>`);
+    // selectorDOM.innerHTML = selectorDOM.innerHTML + `<nav>${HTML}</nav>`;
+
 }
 
-const icons = ['facebook', 'twitter', 'linkedin'];
-const icons1 = [];
-generuotiSocials('.socials', icons);
+const menu = [
+    {
+        href: '#',
+        title: 'Home'
+    },
+    {
+        href: '#',
+        title: 'Services'
+    },
+    {
+        href: '#',
+        title: 'About us'
+    },
+    {
+        href: '#',
+        title: 'Contact us'
+    }
+];
+
+console.log(generateNavLinks('header', menu));
