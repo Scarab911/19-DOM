@@ -1,3 +1,4 @@
+debugger;
 const gyvunai = ['zuikis', 'barsukas', 'lape', 'vilkas', 'sernas', 'stirna', 'vovere'];
 
 function addAndPrint(selector, data) {
