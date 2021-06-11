@@ -5,8 +5,7 @@ function addAndPrint(selector, data) {
     //Validations
 
     //Logic
-    const selectorDOM = document.querySelector(selector);
-    const labelDOM = document.querySelector('label');
+    const DOM = document.querySelector(selector);
     const button = document.querySelector('button');
 
     let HTML = '';
@@ -15,7 +14,7 @@ function addAndPrint(selector, data) {
         HTML += `<option value="${item}">${item}</option>`
     }
 
-    labelDOM.insertAdjacentHTML('afterend', `<select>${HTML}</select>`);
+    DOM.insertAdjacentHTML('afterend', `<select>${HTML}</select>`);
 
     const selectDOM = document.querySelector('select');
     selectDOM.classList.add('pomidoras'); //uzdedam klase kad pirma raide butu didzioji
@@ -30,4 +29,4 @@ function addAndPrint(selector, data) {
     // post Logic Validations
 }
 
-console.log(addAndPrint('form', gyvunai));
+addAndPrint('label', gyvunai);
