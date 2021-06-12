@@ -15,12 +15,15 @@ form {
   flex-direction: column;
   gap: 20px;
 }
-select,
+input,
 button {
   padding: 5px 20px;
   font-size: 30px;
   line-height: 40px;
 }
-.pomidoras {
-  text-transform: capitalize;
+.board {
+  display: inline-block;
+  width: 400px;
+  height: 400px;
+  box-shadow: 0 0 10px #0005;
 }

@@ -1,33 +1,18 @@
-debugger;
-const gyvunai = ['zuikis', 'barsukas', 'lape', 'vilkas', 'sernas', 'stirna', 'vovere'];
 
-function addAndPrint(selector, data) {
-    //Validations
-
-    //Logic
-    const DOM = document.querySelector(selector);
-
-    let HTML = '';
-
-    for (const item of data) {
-        HTML += `<option value="${item}">${item}</option>`
-    }
-
-    DOM.insertAdjacentHTML('afterend', `<select>${HTML}</select>`);
-
-
-    // post Logic Validations
-}
-addAndPrint('label', gyvunai);
-
-//uzkuriam eventa
+//pirma dalis
 const button = document.querySelector('button');
-const selectDOM = document.querySelector('select');
-selectDOM.classList.add('pomidoras'); //uzdedam klase kad pirma raide butu didzioji
-const spanDOM = document.querySelector('.option');
-spanDOM.classList.add('pomidoras');
+const input = document.querySelector('#board')
+const option = document.querySelector('.option')
+//antra dalis
+const board = document.querySelector('.board')
 
 button.addEventListener('click', (e) => {
     e.preventDefault();
-    spanDOM.innerText = selectDOM.value;
-});
+    const n = input.value;
+    option.innerText = `${n}x${n}`;
+})
+
+function generateChessBoard() {
+
+}
+generateChessBoard();
