@@ -6,7 +6,6 @@ function addAndPrint(selector, data) {
 
     //Logic
     const DOM = document.querySelector(selector);
-    const button = document.querySelector('button');
 
     let HTML = '';
 
@@ -16,17 +15,19 @@ function addAndPrint(selector, data) {
 
     DOM.insertAdjacentHTML('afterend', `<select>${HTML}</select>`);
 
-    const selectDOM = document.querySelector('select');
-    selectDOM.classList.add('pomidoras'); //uzdedam klase kad pirma raide butu didzioji
-    const spanDOM = document.querySelector('.option');
-    spanDOM.classList.add('pomidoras');
-
-    button.addEventListener('click', (e) => {
-        e.preventDefault();
-        spanDOM.innerText = selectDOM.value;
-    });
 
     // post Logic Validations
 }
-
 addAndPrint('label', gyvunai);
+
+//uzkuriam eventa
+const button = document.querySelector('button');
+const selectDOM = document.querySelector('select');
+selectDOM.classList.add('pomidoras'); //uzdedam klase kad pirma raide butu didzioji
+const spanDOM = document.querySelector('.option');
+spanDOM.classList.add('pomidoras');
+
+button.addEventListener('click', (e) => {
+    e.preventDefault();
+    spanDOM.innerText = selectDOM.value;
+});
