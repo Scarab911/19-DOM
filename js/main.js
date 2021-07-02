@@ -1,8 +1,8 @@
 function tortoGabalas(tortuKiekis, zmoniuKiekis, tortoSvoris) {
-    const svorisGramais = tortoSvoris * 1000;
-    const tortoLikutis = (tortuKiekis * svorisGramais) % zmoniuKiekis;
-    console.log(tortoLikutis);
-    console.log(Math.floor(tortuKiekis * svorisGramais / zmoniuKiekis))
+    //torto gabaliukai turi buti identiski! O ne tik  svoris porcijos!
+    const zmonesVienamTortui = Math.ceil(zmoniuKiekis / tortuKiekis)
+    const porcija = Math.floor((tortoSvoris * 1000) / zmonesVienamTortui);
+    return porcija
 }
 
 console.log(tortoGabalas(3, 17, 1));
